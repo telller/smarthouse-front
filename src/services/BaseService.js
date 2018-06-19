@@ -4,7 +4,7 @@ class BaseService {
   static get (url, data) {
     const body = data ? `?${qs.stringify(data)}` : ''
     return new Promise((resolve, reject) => {
-      fetch(`${url}${body}`, { mode: 'no-cors' }).then(response => {
+      fetch(`${url}${body}`).then(response => {
         if (response.status >= 200 && response.status <= 304) {
           return response.json()
         } else {
