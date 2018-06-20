@@ -1,50 +1,48 @@
-import qs from 'qs'
-
+const url = 'http://192.168.0.159/'
+function MultipleException (errors) {
+  this.isMultiple = true
+  this.messages = errors.map(err => 'code: ' + err.code + '\n ' + err.msg + '\n')
+  this.message = errors.reduce((acc, err, index) => `${index}: ` + acc.msg + ' \n' + `${index + 1}: ` + err.msg + ' \n')
+  this.title = 'MULTIPLE ERRORS'
+  this.isError = true
+  this.toString = function () {
+    return this.message
+  }
+}
 class BaseService {
-  static get (url, data) {
-    const body = data ? `?${qs.stringify(data)}` : ''
-    return new Promise((resolve, reject) => {
-      fetch(`${url}${body}`).then(response => {
-        if (response.status >= 200 && response.status <= 304) {
-          return response.json()
-        } else {
-          return response
-        }
-      }).then(text => resolve(text)).catch(error => reject(error))
-    })
-  }
-  static send (url, method, data, json) {
-    const formatData = json ? 'json;charset=UTF-8' : 'x-www-form-urlencoded;charset=UTF-8'
-    return fetch(url, {
-      method,
+  async makeRequest (path = '', options = {}, json = true, text, isHeaders = false) {
+    options = {
+      method: 'GET',
       headers: {
-        'Content-Type': `application/${formatData}`
+        Accept: 'application/json'
       },
-      body: (json ? JSON.stringify(data) : qs.stringify(data))
-    }).then(res => {
-      if (res.status >= 200 && res.status < 300) {
-        return res.text().then(text => {
-          let result
-          if (res.headers.get('content-type') && res.headers.get('content-type').indexOf('octet-stream') === -1) {
-            result = text === '' ? '' : JSON.parse(text)
-          } else {
-            result = text === '' ? '' : text
-          }
-          return result
-        })
-      } else {
-        return res
+      ...options
+    }
+    const response = await fetch(`${url}${this.getUrl(path)}`, options)
+    let name = this.name || this.constructor.name
+    if (!response.ok && response.status !== 503) {
+      let data
+      try {
+        data = await response.json()
+      } catch (err) {
+        throw new Error(`${name} request failed: ${response.statusText}`)
       }
-    })
-  }
-  static post (url, data, json) {
-    return this.send(url, 'POST', data, json)
-  }
-  static put (url, data) {
-    return this.send(url, 'PUT', data)
-  }
-  static remove (url) {
-    return this.send(url, 'DELETE')
+      if (data && data.errors && data.errors[0] && data.errors[0].msg) {
+        if (data.errors.length === 1 && data.errors[0] && data.errors[0].code === 2001) return data.errors[0]
+        if (data.errors.length > 1) throw new MultipleException(data.errors)
+        if (response.status === 409) {
+          const error = {code: 409, message: `${name} error: ${data.errors[0].msg}`}
+          throw error
+        }
+        throw new Error(`${name} error: ${data.errors[0].msg}`)
+      }
+      throw new Error(`${name} request failed: ${response.statusText}`)
+    } else if (!response.ok && response.status === 503) {
+      throw new Error(`${name} service error: ${response.statusText}`)
+    }
+    if (text) return isHeaders ? {text: response.text(), headers: response.headers} : response.text()
+    if (json) return response.status === 204 ? '' : response.json()
+    return response
   }
 }
 

@@ -1,5 +1,5 @@
+import LightService from 'services/light.service.js'
 import { Spin, Icon, Switch } from 'antd'
-import BaseService from 'base-service'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -12,12 +12,12 @@ class Home extends React.Component {
   state = {
     checked: false
   }
-  onChange = () => {
-    BaseService.get('http://192.168.0.159/light/toogle')
-      .then(r => this.setState({checked: !!r.state}))
+  onChange = async () => {
+    const req = await LightService.toogleLed()
+    req && this.setState({checked: !!req.state})
   }
   componentWillReceiveProps = n => {
-    this.setState({checked: !!n.status})
+    this.setState({checked: !!n.status.state})
   }
   render () {
     return (

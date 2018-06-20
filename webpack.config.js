@@ -2,16 +2,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
 const alias = {
-  'base-service': path.resolve('./src/services/BaseService.js'),
+  'showError': path.resolve('./src/services/showError'),
   'actions': path.resolve('./src/store/actions'),
-  'components': path.resolve('./src/components')
+  'components': path.resolve('./src/components'),
+  'services': path.resolve('./src/services')
 }
 module.exports = env => {
   const production = env === 'production'
   let outputCSS = 'bundle.css'
   let outputJS = 'bundle.js'
   return ({
-    entry: './src',
+    entry: ['babel-polyfill', './src'],
     output: {
       path: path.resolve(__dirname, './'),
       filename: outputJS

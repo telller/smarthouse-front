@@ -1,8 +1,12 @@
-import BaseService from 'base-service'
+import LightService from 'services/light.service.js'
+import showError from 'showError'
 
-export const init = () => dispatch => {
-  BaseService.get('http://192.168.0.159/light/status').then(r => {
-    dispatch({ type: 'GET_STATUS', status: r.state })
+export const init = () => async dispatch => {
+  try {
+    const status = await LightService.getStatus()
+    dispatch({ type: 'GET_STATUS', status })
     dispatch({ type: 'LOADING', loading: false })
-  })
+  } catch (err) {
+    showError(err)
+  }
 }
