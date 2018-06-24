@@ -10,8 +10,8 @@ class Home extends React.Component {
     loading: PropTypes.bool
   }
   state = {
-    white: 0,
-    yellow: 0
+    white: false,
+    yellow: false
   }
   handleWhite = async () => {
     const body = {
@@ -19,7 +19,7 @@ class Home extends React.Component {
       yellow: this.state.yellow
     }
     const req = await LightService.toogleLed(body)
-    req && this.setState({white: req.white, yellow: req.yellow})
+    req && this.setState({white: !!req.white, yellow: !!req.yellow})
   }
   handleYellow = async () => {
     const body = {
@@ -27,10 +27,10 @@ class Home extends React.Component {
       yellow: !this.state.yellow
     }
     const req = await LightService.toogleLed(body)
-    req && this.setState({white: req.white, yellow: req.yellow})
+    req && this.setState({white: !!req.white, yellow: !!req.yellow})
   }
   componentWillReceiveProps = n => {
-    this.setState({white: n.status.white, yellow: n.status.yellow})
+    this.setState({white: !!n.status.white, yellow: !!n.status.yellow})
   }
   render () {
     return (
