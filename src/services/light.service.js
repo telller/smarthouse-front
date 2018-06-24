@@ -9,8 +9,15 @@ class LightService extends BaseService {
   async getStatus () {
     return this.makeRequest('/status')
   }
-  async toogleLed () {
-    return this.makeRequest('/toogle')
+  async toogleLed (body) {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'aplication/json'
+      },
+      body: JSON.stringify(body)
+    }
+    return this.makeRequest('/toogle', options)
   }
 }
 

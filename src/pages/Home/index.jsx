@@ -10,20 +10,34 @@ class Home extends React.Component {
     loading: PropTypes.bool
   }
   state = {
-    checked: false
+    white: 0,
+    yellow: 0
   }
-  onChange = async () => {
-    const req = await LightService.toogleLed()
-    req && this.setState({checked: !!req.state})
+  handleWhite = async () => {
+    const body = {
+      white: !this.state.white,
+      yellow: this.state.yellow
+    }
+    const req = await LightService.toogleLed(body)
+    req && this.setState({white: req.white, yellow: req.yellow})
+  }
+  handleYellow = async () => {
+    const body = {
+      white: this.state.white,
+      yellow: !this.state.yellow
+    }
+    const req = await LightService.toogleLed(body)
+    req && this.setState({white: req.white, yellow: req.yellow})
   }
   componentWillReceiveProps = n => {
-    this.setState({checked: !!n.status.state})
+    this.setState({white: n.status.white, yellow: n.status.yellow})
   }
   render () {
     return (
       <Spin indicator={<Icon type='loading' style={{ fontSize: 50 }} spin />} spinning={this.props.loading}>
         <div style={{padding: '10px 30px'}}>
-          LED: <Switch onChange={this.onChange} checked={this.state.checked} />
+          White: <Switch onChange={this.handleWhite} checked={this.state.white} />
+          Yellow: <Switch onChange={this.handleYellow} checked={this.state.yellow} />
         </div>
       </Spin>
     )
