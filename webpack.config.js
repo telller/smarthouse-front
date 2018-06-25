@@ -12,7 +12,7 @@ module.exports = env => {
   let outputCSS = 'bundle.css'
   let outputJS = 'bundle.js'
   return ({
-    entry: ['babel-polyfill', './src'],
+    entry: ['babel-polyfill', './src/app'],
     output: {
       path: path.resolve(__dirname, './'),
       filename: outputJS
@@ -64,6 +64,7 @@ module.exports = env => {
     },
     plugins: [
       new ExtractTextPlugin(outputCSS),
+      new webpack.NamedModulesPlugin(),
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify(env)

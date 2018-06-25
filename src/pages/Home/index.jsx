@@ -35,12 +35,14 @@ class Home extends React.Component {
   }
   render () {
     return (
-      <Spin spinning={this.props.isFetchingStatus}>
-        <div style={{padding: '10px 30px'}}>
-          White: <Switch onChange={this.handleWhite} checked={this.state.white} />
-          Yellow: <Switch onChange={this.handleYellow} checked={this.state.yellow} />
-        </div>
-      </Spin>
+      <div id='home'>
+        <Spin className='home' spinning={this.props.isFetchingStatus}>
+          <div style={{padding: '10px 30px'}}>
+            Whitess: <Switch onChange={this.handleWhite} checked={this.state.white} />
+            Yellow: <Switch onChange={this.handleYellow} checked={this.state.yellow} />
+          </div>
+        </Spin>
+      </div>
     )
   }
 }

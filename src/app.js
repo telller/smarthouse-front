@@ -1,13 +1,13 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { Route, Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
+import { Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
 import thunk from 'redux-thunk'
-import Home from './pages/Home'
+import Routes from './Routes'
 import reducers from 'store'
 import React from 'react'
-import './main.styl'
+import './app.styl'
 
 const store = createStore(combineReducers(reducers), applyMiddleware(thunk))
 const history = createBrowserHistory()
@@ -15,7 +15,7 @@ const history = createBrowserHistory()
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route exact path='/' component={Home} />
+      <Routes />
     </Router>
   </Provider>,
   document.getElementById('root')
