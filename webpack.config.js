@@ -3,9 +3,9 @@ const webpack = require('webpack')
 const path = require('path')
 const alias = {
   'showError': path.resolve('./src/services/showError'),
-  'actions': path.resolve('./src/store/actions'),
   'components': path.resolve('./src/components'),
-  'services': path.resolve('./src/services')
+  'services': path.resolve('./src/services'),
+  'store': path.resolve('./src/store')
 }
 module.exports = env => {
   const production = env === 'production'

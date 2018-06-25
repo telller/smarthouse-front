@@ -1,7 +1,5 @@
-import { routerReducer as router } from 'react-router-redux'
-import app from './reducers/app'
+import light from './light/reducer'
 
 export default {
-  router,
-  app
+  light
 }

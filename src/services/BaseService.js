@@ -1,4 +1,6 @@
+
 const url = 'http://192.168.0.159/'
+
 function MultipleException (errors) {
   this.isMultiple = true
   this.messages = errors.map(err => 'code: ' + err.code + '\n ' + err.msg + '\n')
@@ -9,6 +11,7 @@ function MultipleException (errors) {
     return this.message
   }
 }
+
 class BaseService {
   async makeRequest (path = '', options = {}, json = true, text, isHeaders = false) {
     options = {

@@ -78,10 +78,6 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@types/node@*":
-  version "10.3.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.4.tgz#c74e8aec19e555df44609b8057311052a2c84d9e"
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -1861,10 +1857,6 @@ decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
 
-deep-diff@^0.3.5:
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
-
 deep-equal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
@@ -2028,12 +2020,6 @@ dom-matches@>=1.0.1:
 dom-scroll-into-view@1.x, dom-scroll-into-view@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/dom-scroll-into-view/-/dom-scroll-into-view-1.2.1.tgz#e8f36732dd089b0201a88d7815dc3f88e6d66c7e"
-
-dom7@^2.0.6:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.7.tgz#43940bff361cc0e5f38c349b055fd60c10309b89"
-  dependencies:
-    ssr-window "^1.0.0"
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -4201,12 +4187,6 @@ parse-json@^2.2.0:
   dependencies:
     error-ex "^1.2.0"
 
-parse5@^3.0.2:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/parse5/-/parse5-3.0.3.tgz#042f792ffdd36851551cf4e9e066b3874ab45b5c"
-  dependencies:
-    "@types/node" "*"
-
 parseurl@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
@@ -4624,14 +4604,6 @@ promise@^7.1.1:
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
   dependencies:
     asap "~2.0.3"
-
-prop-types@15.6.1:
-  version "15.6.1"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
 
 prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.2"
@@ -5084,10 +5056,6 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-attr-converter@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/react-attr-converter/-/react-attr-converter-0.3.1.tgz#4a2abf6d907b7ddae4d862dfec80e489ce41ad6e"
-
 react-dom@^16.2.0:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
@@ -5096,21 +5064,6 @@ react-dom@^16.2.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
-
-react-ga@^2.2.0:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.5.3.tgz#0f447c73664c069a5fc341f6f431262e3d4c23c4"
-  optionalDependencies:
-    prop-types "^15.6.0"
-    react "^15.6.2 || ^16.0"
-
-react-id-swiper@^1.6.1:
-  version "1.6.6"
-  resolved "https://registry.yarnpkg.com/react-id-swiper/-/react-id-swiper-1.6.6.tgz#6f109941252953aa812d8ef19cb55ccfef0692b1"
-  dependencies:
-    object-assign "^4.1.1"
-    prop-types "15.6.1"
-    swiper "4.3.3"
 
 react-lazy-load@^3.0.12:
   version "3.0.13"
@@ -5125,13 +5078,6 @@ react-lifecycles-compat@^3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-mic@^9.1.2:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/react-mic/-/react-mic-9.2.0.tgz#b1b082f5b16f4c745425eafb47cb3ea1201fac5b"
-  dependencies:
-    prop-types "^15.5.10"
-    react-ga "^2.2.0"
-
 react-redux@^5.0.7:
   version "5.0.7"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
@@ -5142,13 +5088,6 @@ react-redux@^5.0.7:
     lodash-es "^4.17.5"
     loose-envify "^1.1.0"
     prop-types "^15.6.0"
-
-react-render-html@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/react-render-html/-/react-render-html-0.6.0.tgz#1af51d859ed75474435a1c65c293a48e12c36627"
-  dependencies:
-    parse5 "^3.0.2"
-    react-attr-converter "^0.3.1"
 
 react-router-dom@^4.2.2:
   version "4.3.1"
@@ -5161,15 +5100,7 @@ react-router-dom@^4.2.2:
     react-router "^4.3.1"
     warning "^4.0.1"
 
-react-router-redux@^5.0.0-alpha.8:
-  version "5.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-5.0.0-alpha.9.tgz#825431516e0e6f1fd93b8807f6bd595e23ec3d10"
-  dependencies:
-    history "^4.7.2"
-    prop-types "^15.6.0"
-    react-router "^4.2.0"
-
-react-router@^4.2.0, react-router@^4.3.1:
+react-router@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.3.1.tgz#aada4aef14c809cb2e686b05cee4742234506c4e"
   dependencies:
@@ -5191,7 +5122,7 @@ react-slick@~0.23.1:
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
 
-"react@^15.6.2 || ^16.0", react@^16.2.0:
+react@^16.2.0:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
   dependencies:
@@ -5272,13 +5203,7 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-logger@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
-  dependencies:
-    deep-diff "^0.3.5"
-
-redux-thunk@^2.2.0:
+redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
 
@@ -5632,12 +5557,6 @@ shallowequal@^1.0.1, shallowequal@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.0.2.tgz#1561dbdefb8c01408100319085764da3fcf83f8f"
 
-share-dialog@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/share-dialog/-/share-dialog-0.3.0.tgz#cb5bb2247c159638a9f542919ef95f7bb3cbbe16"
-  dependencies:
-    xtend "~4.0.0"
-
 shebang-command@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-1.2.0.tgz#44aac65b695b03398968c39f363fee5deafdf1ea"
@@ -5805,10 +5724,6 @@ split-string@^3.0.1, split-string@^3.0.2:
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
-
-ssr-window@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.0.tgz#8ed1b6beaa0a371ba7e74d6515d584c3f1cf973c"
 
 stampit@1.2.0:
   version "1.2.0"
@@ -5988,13 +5903,6 @@ svgo@^0.7.0:
     mkdirp "~0.5.1"
     sax "~1.2.1"
     whet.extend "~0.9.9"
-
-swiper@4.3.3:
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.3.3.tgz#92e39c806ead23a18e5c3251dfba1ae9ce76270e"
-  dependencies:
-    dom7 "^2.0.6"
-    ssr-window "^1.0.0"
 
 symbol-observable@^1.0.3:
   version "1.2.0"
@@ -6464,7 +6372,7 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-xtend@^4.0.0, xtend@~4.0.0:
+xtend@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
